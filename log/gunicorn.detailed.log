@@ -1,0 +1,8 @@
+[2023-09-13 01:29:47,937] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 01:29:52,978] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 01:29:52] "PUT /user/update?name=Fatima%20Oliveira HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 01:29:57,311] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 01:29:57] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 01:30:08,372] WARNING update_user() L170  Erro ao adicionar usuário, Não foi possível salvar alterações do usuário :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py L170 
+[2023-09-13 01:30:08,372] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 01:30:08] "[31m[1mPUT /user/update?name=Fatima%20Oliveira HTTP/1.1[0m" 400 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
