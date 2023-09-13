@@ -1,8 +1,4 @@
-[2023-09-12 19:08:13,528] INFO _log() L224   * Running on all addresses (0.0.0.0)
-   WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://127.0.0.1:5000
- * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:08:31,980] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+[2023-09-13 15:03:28,412] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
 Traceback (most recent call last):
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -18,82 +14,75 @@ Traceback (most recent call last):
     resp = _do_wrapper(
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
     response = func(**request_kwargs)
-  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 141, in update_user
-    print(user_to_update.name)
-AttributeError: 'NoneType' object has no attribute 'name'
-[2023-09-12 19:08:31,985] INFO _log() L224  127.0.0.1 - - [12/Sep/2023 19:08:31] "[35m[1mPUT /user/update HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:08:47,945] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1695, in make_response
-    raise TypeError(
-TypeError: The view function for 'update_user' did not return a valid response. The function either returned None or ended without a return statement.
-[2023-09-12 19:08:47,947] INFO _log() L224  127.0.0.1 - - [12/Sep/2023 19:08:47] "[35m[1mPUT /user/update?name=Beatriz HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:09:11,844] INFO _log() L224   * Running on all addresses (0.0.0.0)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 160, in update_user
+    user.append[[i.name, i.mail]]
+AttributeError: 'User' object has no attribute 'append'
+[2023-09-13 15:03:28,432] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:03:28] "[35m[1mPUT /user/update?mail=julia.adm@empresa.com HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:03:45,075] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:09:13,749] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+[2023-09-13 15:03:46,338] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
 Traceback (most recent call last):
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1695, in make_response
-    raise TypeError(
-TypeError: The view function for 'update_user' did not return a valid response. The function either returned None or ended without a return statement.
-[2023-09-12 19:09:13,751] INFO _log() L224  127.0.0.1 - - [12/Sep/2023 19:09:13] "[35m[1mPUT /user/update?name=Beatriz HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:10:18,409] INFO _log() L224   * Running on all addresses (0.0.0.0)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 273, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 160, in update_user
+    users.append[[i.name, i.mail]]
+TypeError: 'builtin_function_or_method' object is not subscriptable
+[2023-09-13 15:03:46,345] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:03:46] "[35m[1mPUT /user/update?mail=julia.adm@empresa.com HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:06:53,736] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:10:24,662] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1695, in make_response
-    raise TypeError(
-TypeError: The view function for 'update_user' did not return a valid response. The function either returned None or ended without a return statement.
-[2023-09-12 19:10:24,665] INFO _log() L224  127.0.0.1 - - [12/Sep/2023 19:10:24] "[35m[1mPUT /user/update?name=Paula HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:13:04,643] INFO _log() L224   * Running on all addresses (0.0.0.0)
+[2023-09-13 15:07:04,491] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:07:04] "PUT /user/update?mail=julia.adm@empresa.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:07:15,806] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:07:15] "PUT /user/update?mail=julia.adm@empresa.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:07:18,450] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:07:18] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:08:24,688] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:13:06,902] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+[2023-09-13 15:08:29,483] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
 Traceback (most recent call last):
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1695, in make_response
-    raise TypeError(
-TypeError: The view function for 'update_user' did not return a valid response. The function either returned None or ended without a return statement.
-[2023-09-12 19:13:06,905] INFO _log() L224  127.0.0.1 - - [12/Sep/2023 19:13:06] "[35m[1mPUT /user/update?name=Paula HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:17:12,688] INFO _log() L224   * Running on all addresses (0.0.0.0)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 273, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 150, in update_user
+    user = session.query(User).filter(User.mail == user_mail).first()
+UnboundLocalError: local variable 'session' referenced before assignment
+[2023-09-13 15:08:29,488] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:08:29] "[35m[1mPUT /user/update?mail=julia.adm@empresa.com HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:08:43,994] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-12 19:17:15,746] ERROR log_exception() L1449 Exception on /user/update [PUT] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
-Traceback (most recent call last):
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1520, in full_dispatch_request
-    return self.finalize_request(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1539, in finalize_request
-    response = self.make_response(rv)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1695, in make_response
-    raise TypeError(
-TypeError: The view function for 'update_user' did not return a valid response. The function either returned None or ended without a return statement.
+[2023-09-13 15:08:45,866] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:08:45] "PUT /user/update?mail=julia.adm@empresa.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:08:49,540] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:08:49] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:08:57,364] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:08:57] "PUT /user/update?mail=julia.adm@empresa.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 15:09:00,394] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 15:09:00] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:54:38,974] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-13 17:56:07,267] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 17:56:07] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 

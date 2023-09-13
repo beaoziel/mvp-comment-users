@@ -17,6 +17,22 @@ CORS(app)
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
 user_tag = Tag(name="Usuario", description="Adição, visualização e remoção de usuários à base")
 
+def get_duplicates(input:str):
+    session = Session()
+    list = []
+    all = session.query(User).all()
+
+    if input == "name":
+        for i in all:
+            value = i.name
+            list.append(value)
+    else:
+        for i in all:
+            value = i.mail
+            list.append(value)
+
+    return list
+
 @app.get('/', tags=[home_tag])
 def home():
     """Redireciona para /openapi, tela que permite a escolha do estilo de documentação.
@@ -32,22 +48,21 @@ def add_user(form: UserSchema):
     Retorna uma representação dos usuários associados.
     """
     session = Session()
-    names = []
-    users = session.query(User).all()
-
-    for u in users:
-        names.append(u.name)
+    names = get_duplicates("name")
+    mails = get_duplicates("mail")
 
     if form.name in names:
         error_msg = "Usuário de mesmo nome já salvo na base :/"
         logger.warning(f"Erro ao adicionar usuário, {error_msg}")
-        return {"mesage": error_msg}, 409
-    
+        return {"mesage": error_msg}, 200
+    elif form.mail in mails:
+        error_msg = "Email já cadastrado na base :/"
+        logger.warning(f"Erro ao adicionar usuário, {error_msg}")
+        return {"mesage": error_msg}, 200
     else:
         user = User(
             name=form.name,
-            mail=form.mail,
-            project=form.project)
+            mail=form.mail)
         logger.debug(f"Adicionando um novo usuário: '{user.name}'")
         try:
             session = Session()
@@ -118,7 +133,7 @@ def del_user(query: UserSearchSchema):
         logger.warning(f"Erro ao deletar usuário #'{user_name}', {error_msg}")
         return {"mesage": error_msg}, 404
 
-#4 Buscar usuário ID
+#4 Buscar usuário pelo nome
 @app.get('/user/get', tags=[user_tag],
          responses={"200": UserSearchSchema, "404": ErrorSchema})
 def get_user(query: UserSearchSchema):
@@ -141,35 +156,82 @@ def get_user(query: UserSearchSchema):
 #5 Atualizar usuário
 @app.put('/user/update', tags=[user_tag],
             responses={"200": UserSchema, "404": ErrorSchema})
-def update_user(query: UserSearchSchema, form: UserSchema):
+def update_user(query: UserMailSearchSchema, form: UserSchema):
     """
     Faz update dos valores de um usuário
+    """
+    user_mail = unquote(unquote(query.mail))
+    logger.debug(f"Coletando usuário {user_mail}")
+    # criando conexão com a base
+    session = Session()
+    #Fazendo busca
+    user = session.query(User).filter(User.mail == user_mail).first()
+    if not user:
+        return "Nenhum usuário encontrado", 200
+    else:
+        names = get_duplicates("name")
+        mails = get_duplicates("mail")
+        
+        if form.name in names and user.mail != form.mail :
+                #Verificar se email já existe
+                if form.mail in mails:
+                    return "Email já utlizado", 200
+                else:
+                    try:
+                        user.mail = form.mail
+                        user.name = user.name
+                        session.commit()
+                        logger.debug(f"Editando usuário: '{user.name}'")
+                        return show_user(user), 200
+
+                    except Exception as e:
+                        # caso um erro fora do previsto
+                        error_msg = "Não foi possível editar usuário :/"
+                        logger.warning(f"Erro ao editar usuário, {error_msg}")
+                        return {"mesage": error_msg}, 400
+        elif form.mail in mails and user.name != form.name :
+            #Verificar se nome já existe
+            if form.name in names:
+                return "Nome já utilizado", 200
+            else: 
+                 try:
+                        user.mail = user.mail
+                        user.name = form.name
+                        session.commit()
+                        logger.debug(f"Editando usuário: '{user.name}'")
+                        return show_user(user), 200
+
+                 except Exception as e:
+                        # caso um erro fora do previsto
+                        error_msg = "Não foi possível rditar usuário :/"
+                        logger.warning(f"Erro ao editar usuário, {error_msg}")
+                        return {"mesage": error_msg}, 400
+        else:
+                # caso um erro fora do previsto
+                error_msg = "Não foi possível rditar usuário :/"
+                logger.warning(f"Erro ao editar usuário, {error_msg}")
+                return {"mesage": error_msg}, 400
+
+#6 Pegar ID do usuário 
+@app.get('/user/getID', tags=[user_tag],
+         responses={"200": UserSearchSchema, "404": ErrorSchema})
+def get_user_ID(query: UserSearchSchema):
+    """Faz a busca por nome do usuário
+        Retorna uma representação do usuário
     """
     user_name = unquote(unquote(query.name))
     logger.debug(f"Coletando usuário {user_name}")
     # criando conexão com a base
     session = Session()
-    #Fazendo busca
-    user = session.query(User).filter(User.name == user_name).first()
-
-    try:
-        logger.debug(f"Alterando usuário: '{user.name}'")
-        user.name = form.name 
-        session.commit()
-        return show_user(user), 200
-    
-    except IntegrityError as e:
-        # como a duplicidade do nome é a provável razão do IntegrityError
-        error_msg = "Usuário de mesmo nome já salvo na base :/"
-        logger.warning(f"Erro ao atualizar usuário, {error_msg}")
-        return {"mesage": error_msg}, 409
-
-    except Exception as e:
-        # caso um erro fora do previsto
-        error_msg = "Não foi possível salvar alterações do usuário :/"
-        logger.warning(f"Erro ao adicionar usuário, {error_msg}")
-        return {"mesage": error_msg}, 400
-
+    #Fazendo busca geral
+    stmt=(f'SELECT pk_user FROM users WHERE name = "{user_name}"')
+    user = session.execute(stmt)
+    if not user:
+        return "Nenhum usuário encontrado", 200
+    else:
+        user = session.query(User).filter(User.name == user_name).first()
+        print(user)
+        return show_userID(user), 200
 
     
     
