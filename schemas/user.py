@@ -14,6 +14,12 @@ class UserSearchSchema(BaseModel):
     """
     name: str = "Maria"
 
+class UserSearchIdSchema(BaseModel):
+    """ Define como deve ser a estrutura que representa a busca. Que será
+        feita apenas com base no nome do usuario.
+    """
+    id: int = 2
+
 class UserMailSearchSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
         feita apenas com base no email do usuario.
@@ -47,7 +53,7 @@ class UsereDelSchema(BaseModel):
     name: str
 
 class UserViewSchema(BaseModel):
-    """ Define como um usuario será retornado: nome + comentários.
+    """ Define como um usuario será retornado: nome + email.
     """
     id: int = 1
     name: str = "Maria"
@@ -55,7 +61,7 @@ class UserViewSchema(BaseModel):
 
 def show_user(user: User):
     """ Retorna uma representação do usuario seguindo o schema definido em
-        ProdutoViewSchema.
+        UserViewSchema.
     """
     return {
         "id": user.id,
@@ -65,7 +71,7 @@ def show_user(user: User):
 
 def show_userID(user: User):
     """ Retorna uma representação do usuario seguindo o schema definido em
-        ProdutoViewSchema.
+        UserViewSchema.
     """
     return {
         "id": user.id

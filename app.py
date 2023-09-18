@@ -17,6 +17,7 @@ CORS(app)
 home_tag = Tag(name="Documentação", description="Seleção de documentação: Swagger, Redoc ou RapiDoc")
 user_tag = Tag(name="Usuario", description="Adição, visualização e remoção de usuários à base")
 
+#Função geral
 def get_duplicates(input:str):
     session = Session()
     list = []
@@ -54,11 +55,11 @@ def add_user(form: UserSchema):
     if form.name in names:
         error_msg = "Usuário de mesmo nome já salvo na base :/"
         logger.warning(f"Erro ao adicionar usuário, {error_msg}")
-        return {"mesage": error_msg}, 200
+        return {"mesage": error_msg}, 409
     elif form.mail in mails:
         error_msg = "Email já cadastrado na base :/"
         logger.warning(f"Erro ao adicionar usuário, {error_msg}")
-        return {"mesage": error_msg}, 200
+        return {"mesage": error_msg}, 409
     else:
         user = User(
             name=form.name,
@@ -137,7 +138,7 @@ def del_user(query: UserSearchSchema):
 @app.get('/user/get', tags=[user_tag],
          responses={"200": UserSearchSchema, "404": ErrorSchema})
 def get_user(query: UserSearchSchema):
-    """Faz a busca por nome do usuário
+    """Faz a busca por um usuário, pelo seu nome
         Retorna uma representação do usuário
     """
     user_name = unquote(unquote(query.name))
@@ -167,7 +168,7 @@ def update_user(query: UserMailSearchSchema, form: UserSchema):
     #Fazendo busca
     user = session.query(User).filter(User.mail == user_mail).first()
     if not user:
-        return "Nenhum usuário encontrado", 200
+        return "Nenhum usuário encontrado", 204
     else:
         names = get_duplicates("name")
         mails = get_duplicates("mail")
@@ -175,7 +176,7 @@ def update_user(query: UserMailSearchSchema, form: UserSchema):
         if form.name in names and user.mail != form.mail :
                 #Verificar se email já existe
                 if form.mail in mails:
-                    return "Email já utlizado", 200
+                    return "Email já utlizado", 409
                 else:
                     try:
                         user.mail = form.mail
@@ -192,7 +193,7 @@ def update_user(query: UserMailSearchSchema, form: UserSchema):
         elif form.mail in mails and user.name != form.name :
             #Verificar se nome já existe
             if form.name in names:
-                return "Nome já utilizado", 200
+                return "Nome já utilizado", 409
             else: 
                  try:
                         user.mail = user.mail
@@ -203,7 +204,7 @@ def update_user(query: UserMailSearchSchema, form: UserSchema):
 
                  except Exception as e:
                         # caso um erro fora do previsto
-                        error_msg = "Não foi possível rditar usuário :/"
+                        error_msg = "Não foi possível editar usuário :/"
                         logger.warning(f"Erro ao editar usuário, {error_msg}")
                         return {"mesage": error_msg}, 400
         else:
@@ -216,7 +217,7 @@ def update_user(query: UserMailSearchSchema, form: UserSchema):
 @app.get('/user/getID', tags=[user_tag],
          responses={"200": UserSearchSchema, "404": ErrorSchema})
 def get_user_ID(query: UserSearchSchema):
-    """Faz a busca por nome do usuário
+    """Faz a busca pelo ID do usuário, pelo nome
         Retorna uma representação do usuário
     """
     user_name = unquote(unquote(query.name))
@@ -227,11 +228,33 @@ def get_user_ID(query: UserSearchSchema):
     stmt=(f'SELECT pk_user FROM users WHERE name = "{user_name}"')
     user = session.execute(stmt)
     if not user:
-        return "Nenhum usuário encontrado", 200
+        return "Nenhum usuário encontrado", 204
     else:
         user = session.query(User).filter(User.name == user_name).first()
         print(user)
         return show_userID(user), 200
 
     
+#7 Pegar Nome do usuário 
+@app.get('/user/getName', tags=[user_tag],
+         responses={"200": UserSearchSchema, "404": ErrorSchema})
+def get_user_name(query: UserSearchIdSchema):
+    """Faz a busca por ID do usuário
+        Retorna uma representação do usuário
+    """
+    user_id = unquote(unquote(str(query.id)))
+    logger.debug(f"Coletando usuário {user_id}")
+    # criando conexão com a base
+    session = Session()
+    #Fazendo busca geral
+    stmt=(f'SELECT name FROM users WHERE pk_user = "{user_id}"')
+    user = session.execute(stmt)
+
+    try:
+        user = session.query(User).filter(User.id == user_id).first()
+        print(user)
+        return show_user(user), 200
+    except:
+        return "Nenhum usuário encontrado", 204
     
+        

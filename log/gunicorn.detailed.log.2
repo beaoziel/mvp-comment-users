@@ -1,9 +1,14 @@
-[2023-09-13 18:11:28,133] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:11:28] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:14:12,556] INFO _log() L224   * Running on all addresses (0.0.0.0)
+[2023-09-14 17:24:00,802] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:14:15,551] ERROR log_exception() L1449 Exception on /user/new [POST] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+[2023-09-14 17:24:05,881] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:24:05] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:24:08,133] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:24:08] "GET /user/getName?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:24:48,361] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:24:53,210] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
 Traceback (most recent call last):
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
     response = self.full_dispatch_request()
@@ -15,55 +20,66 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 191, in wrapper
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
     resp = _do_wrapper(
   File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
     response = func(**request_kwargs)
-  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 50, in add_user
-    names = get_duplicates("name")
-  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 26, in get_duplicates
-    value = i + f".{input}"
-TypeError: unsupported operand type(s) for +: 'User' and 'str'
-[2023-09-13 18:14:15,558] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:14:15] "[35m[1mPOST /user/new HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:16:04,200] INFO _log() L224   * Running on all addresses (0.0.0.0)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 257, in get_user_name
+    return show_user(user), 200
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\schemas\user.py", line 62, in show_user
+    "id": user.id,
+AttributeError: 'NoneType' object has no attribute 'id'
+[2023-09-14 17:24:53,222] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:24:53] "[35m[1mGET /user/getName?id=3 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:25:12,051] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:25:12] "GET /user/getName?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:25:16,459] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 257, in get_user_name
+    return show_user(user), 200
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\schemas\user.py", line 62, in show_user
+    "id": user.id,
+AttributeError: 'NoneType' object has no attribute 'id'
+[2023-09-14 17:25:16,464] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:25:16] "[35m[1mGET /user/getName?id=2 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:25:44,311] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:16:06,089] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:16:06] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:16:22,850] INFO _log() L224   * Running on all addresses (0.0.0.0)
+[2023-09-14 17:25:49,345] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 257, in get_user_name
+    return show_user(user), 200
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\schemas\user.py", line 62, in show_user
+    "id": user.id,
+AttributeError: 'NoneType' object has no attribute 'id'
+[2023-09-14 17:25:49,364] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:25:49] "[35m[1mGET /user/getName?id=2 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:26:24,288] INFO _log() L224   * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
  * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:16:25,327] WARNING add_user() L55   Erro ao adicionar usuário, Usuário de mesmo nome já salvo na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py L55  
-[2023-09-13 18:16:25,327] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:16:25] "[31m[1mPOST /user/new HTTP/1.1[0m" 409 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:16:34,182] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:16:34] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:18:38,509] INFO _log() L224   * Running on all addresses (0.0.0.0)
-   WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://127.0.0.1:5000
- * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:18:42,063] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:18:42] "DELETE /user/delete?name=Katia HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:18:46,948] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:18:46] "DELETE /user/delete?name=Maria HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:18:49,959] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:18:49] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:19:00,476] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:19:00] "DELETE /user/delete?name=Carol HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:19:07,295] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:19:07] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:19:11,493] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:19:11] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:20:19,202] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:20:19] "DELETE /user/delete?name=Carol HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:21:40,954] INFO _log() L224   * Running on all addresses (0.0.0.0)
-   WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://127.0.0.1:5000
- * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:21:43,245] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:21:43] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:21:47,408] WARNING add_user() L65   Erro ao adicionar usuário, Email já cadastrado na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py L65  
-[2023-09-13 18:21:47,410] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:21:47] "[31m[1mPOST /user/new HTTP/1.1[0m" 409 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:21:55,579] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:21:55] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:22:02,807] WARNING add_user() L61   Erro ao adicionar usuário, Usuário de mesmo nome já salvo na base :/ - call_trace=C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py L61  
-[2023-09-13 18:22:02,808] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:22:02] "[31m[1mPOST /user/new HTTP/1.1[0m" 409 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:22:08,114] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:22:08] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:22:27,838] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:22:27] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:23:30,848] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:23:30] "PUT /user/update?mail=teste0@gmail.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:23:40,811] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:23:40] "PUT /user/update?mail=teste0@gmail.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:26:10,105] INFO _log() L224   * Running on all addresses (0.0.0.0)
-   WARNING: This is a development server. Do not use it in a production deployment.
- * Running on http://127.0.0.1:5000
- * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
-[2023-09-13 18:26:12,463] INFO _log() L224  127.0.0.1 - - [13/Sep/2023 18:26:12] "PUT /user/update?mail=teste0@gmail.com HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
