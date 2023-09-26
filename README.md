@@ -16,6 +16,14 @@
   Deixe o seu mural repleto de personalidade com uma seleção completa de Emojis e jogo de cores!
 </p>
 
+## 📜 Funcionalidades
+- ``Faz a busca de todos os usuários cadastrados``
+- ``Faz a busca de um usuário pelo nome``
+- ``Faz a busca do ID do usuário, pelo nome``
+- ``Faz a busca de um usuário pelo ID``
+- ``Adiciona um novo usuário à base de dados``
+- ``Faz a edição do usuário`` 
+
 ## 📐 Arquitetura escolhida
 <p>
   Para garantir uma melhor experiência do usuário, foi decido separar em 4 componentes independentes:
@@ -32,7 +40,7 @@ Com o uso de containers, foi possível melhor gerenciar o desenvolvimento já qu
 
 ## 📁 Acesso ao projeto
 <p>
-  Para acessar, será necessário a inicialização dos componentes <i>Users</i> e <i>Comments</i>. Depois, baixe o código fonte e abra o html "index".
+  Para acessar, será necessário a inicialização dos componentes <i>Users</i> e <i>Comments</i>. Depois, baixe o código fonte do componente de front end e abra o html "index".
   Não é necessário iniciar o front-end, visto que o mesmo consome de outras APIs.
 </p>
 
@@ -41,14 +49,6 @@ Com o uso de containers, foi possível melhor gerenciar o desenvolvimento já qu
 - ``JavaScript``
 - ``CSS``
 - ``Vscode``
-
-## 📜 Funcionalidades
-- ``Faz a busca de todos os usuários cadastrados``
-- ``Faz a busca de um usuário pelo nome``
-- ``Faz a busca do ID do usuário, pelo nome``
-- ``Faz a busca de um usuário pelo ID``
-- ``Adiciona um novo usuário à base de dados``
-- ``Faz a edição do usuário`` 
 
 # 🙋‍♀️ Autores
 
