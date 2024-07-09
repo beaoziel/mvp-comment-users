@@ -1,0 +1,99 @@
+[2023-09-14 17:13:32,045] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 244, in get_user_name
+    user_id = unquote(unquote(query.id))
+  File "C:\Users\biaoz\AppData\Local\Programs\Python\Python310\lib\urllib\parse.py", line 656, in unquote
+    if '%' not in string:
+TypeError: argument of type 'int' is not iterable
+[2023-09-14 17:13:32,075] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:13:32] "[35m[1mGET /user/getName?id=1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:18:16,032] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:18:20,916] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 244, in get_user_name
+    user_id = unquote(unquote(query.id))
+  File "C:\Users\biaoz\AppData\Local\Programs\Python\Python310\lib\urllib\parse.py", line 656, in unquote
+    if '%' not in string:
+TypeError: argument of type 'int' is not iterable
+[2023-09-14 17:18:20,916] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:18:20] "[35m[1mGET /user/getName?id=1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:19:44,018] INFO _log() L224   * Running on all addresses (0.0.0.0)
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.95.8.98:5000 (Press CTRL+C to quit) - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:19:46,544] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 244, in get_user_name
+    user_id = unquote(unquote(query.id))
+  File "C:\Users\biaoz\AppData\Local\Programs\Python\Python310\lib\urllib\parse.py", line 656, in unquote
+    if '%' not in string:
+TypeError: argument of type 'int' is not iterable
+[2023-09-14 17:19:46,544] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:19:46] "[35m[1mGET /user/getName?id=1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:20:17,127] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:20:17] "[33mGET /get/all HTTP/1.1[0m" 404 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:20:29,931] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:20:29] "GET /user/all HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:21:27,719] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:21:27] "POST /user/new HTTP/1.1" 200 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
+[2023-09-14 17:21:32,563] ERROR log_exception() L1449 Exception on /user/getName [GET] - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\scaffold.py", line 109, in wrapper
+    resp = _do_wrapper(
+  File "C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\flask_openapi3\do_wrapper.py", line 135, in _do_wrapper
+    response = func(**request_kwargs)
+  File "C:\Users\biaoz\OneDrive\Documentos\mvp-comment!\mvp-comment-users\app.py", line 244, in get_user_name
+    user_id = unquote(unquote(query.id))
+  File "C:\Users\biaoz\AppData\Local\Programs\Python\Python310\lib\urllib\parse.py", line 656, in unquote
+    if '%' not in string:
+TypeError: argument of type 'int' is not iterable
+[2023-09-14 17:21:32,568] INFO _log() L224  127.0.0.1 - - [14/Sep/2023 17:21:32] "[35m[1mGET /user/getName?id=1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\biaoz\PycharmProjects\18-paiting-project\venv\lib\site-packages\werkzeug\_internal.py L224 
